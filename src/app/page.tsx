@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ContactButton from '../components/ContactButton';
@@ -269,13 +268,16 @@ export default function Home() {
             </div>
             <div className="scroll-animate transform translate-x-[100px] opacity-0 transition-all duration-1000">
               <div className="border-4 border-gold rounded-lg p-2">
-                <Image 
+                <img 
                   src="/images/croppedlawyers.jpg" 
                   alt="Professional lawyers" 
-                  width={600}
-                  height={400}
-                  priority
                   className="w-full h-auto rounded-lg"
+                  onError={(e) => {
+                    console.error('Image failed to load:', (e.target as HTMLImageElement).src);
+                  }}
+                  onLoad={(e) => {
+                    console.log('Image loaded successfully:', (e.target as HTMLImageElement).src);
+                  }}
                 />
               </div>
             </div>
@@ -328,11 +330,9 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold/50 to-gold/20 rounded-lg transform rotate-3 scale-105"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 rounded-lg transform -rotate-1 scale-105"></div>
-                  <Image 
+                  <img 
                     src="/images/aboutus.jpg" 
                     alt="About our law firm" 
-                    width={500}
-                    height={300}
                     className="relative w-full h-auto rounded-lg shadow-2xl border-4 border-gold"
                   />
                 </div>
@@ -357,11 +357,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <Image 
+                <img 
                   src="/images/criminal.jpg" 
                   alt="Criminal Defense" 
-                  width={400}
-                  height={300}
                   className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -376,11 +374,9 @@ export default function Home() {
             
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <Image 
+                <img 
                   src="/images/immigration.jpg" 
                   alt="Immigration Law" 
-                  width={400}
-                  height={300}
                   className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -395,13 +391,15 @@ export default function Home() {
             
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-1">
               <div className="overflow-hidden rounded-lg mb-4">
-                <Image 
+                {/* Temporarily disabled due to large file size (9.9MB) */}
+                {/* <img 
                   src="/images/carcrash.jpg" 
                   alt="Personal Injury" 
-                  width={400}
-                  height={300}
                   className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
-                />
+                /> */}
+                <div className="w-full h-40 md:h-48 bg-gray-700 rounded-lg mb-4 flex items-center justify-center">
+                  <span className="text-gray-400">Personal Injury Image</span>
+                </div>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gold mb-3">{t.practice.personalInjury.title}</h3>
               <p className="text-gray-300 mb-4 text-sm md:text-base">

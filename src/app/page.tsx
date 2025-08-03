@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ContactButton from '../components/ContactButton';
@@ -268,17 +269,12 @@ export default function Home() {
             </div>
             <div className="scroll-animate transform translate-x-[100px] opacity-0 transition-all duration-1000">
               <div className="border-4 border-gold rounded-lg p-2">
-                <img 
+                <Image 
                   src="/images/croppedlawyers.png" 
                   alt="Professional lawyers" 
+                  width={500}
+                  height={300}
                   className="w-full h-auto rounded-lg"
-                  onError={(e) => {
-                    console.error('Image failed to load:', e);
-                    e.currentTarget.style.display = 'none';
-                  }}
-                  onLoad={() => {
-                    console.log('Image loaded successfully');
-                  }}
                 />
               </div>
             </div>

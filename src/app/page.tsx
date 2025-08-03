@@ -271,7 +271,14 @@ export default function Home() {
                 <img 
                   src="/images/croppedlawyers.png" 
                   alt="Professional lawyers" 
-                  className="w-full h-auto rounded-lg shadow-2xl scale-110"
+                  className="w-full h-auto rounded-lg"
+                  onError={(e) => {
+                    console.error('Image failed to load:', e);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully');
+                  }}
                 />
               </div>
             </div>

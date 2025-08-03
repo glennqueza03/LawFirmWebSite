@@ -12,7 +12,7 @@ const practiceAreas = [
     title: 'Criminal Defense',
     description: 'Facing criminal charges? Our criminal defense attorneys provide aggressive representation to protect your rights and freedom.',
     icon: '⚖️',
-    image: '/images/criminal.png',
+    image: '/images/criminal.jpg',
     longDescription: 'Our experienced criminal defense attorneys are dedicated to protecting your constitutional rights and ensuring you receive a fair trial. We handle all types of criminal cases including DUI, drug offenses, assault, theft, and more. With our aggressive defense strategies and deep understanding of criminal law, we work tirelessly to achieve the best possible outcome for your case.'
   },
   {
@@ -20,7 +20,7 @@ const practiceAreas = [
     title: 'Immigration Law',
     description: 'Navigating immigration law can be complex. We help families and individuals with visas, green cards, citizenship, and deportation defense.',
     icon: '🌍',
-    image: '/images/immigration.png',
+    image: '/images/immigration.jpg',
     longDescription: 'Immigration law is complex and constantly changing. Our immigration attorneys provide comprehensive legal services for individuals and families seeking to navigate the U.S. immigration system. We handle visa applications, green card petitions, citizenship applications, deportation defense, and more. We understand the emotional and financial stakes involved in immigration cases and provide compassionate, effective representation.'
   },
   {
@@ -28,7 +28,7 @@ const practiceAreas = [
     title: 'Personal Injury',
     description: 'We help victims of accidents and injuries get the compensation they deserve. Our experienced attorneys handle car accidents, slip and falls, medical malpractice, and more.',
     icon: '🏥',
-    image: '/images/carcrash.png',
+    image: '/images/carcrash.jpg',
     longDescription: 'If you\'ve been injured due to someone else\'s negligence, you deserve compensation for your medical bills, lost wages, and pain and suffering. Our personal injury attorneys have successfully recovered millions of dollars for our clients. We handle car accidents, slip and falls, medical malpractice, workplace injuries, and other personal injury cases. We work on a contingency fee basis, meaning you don\'t pay unless we win.'
   }
 ];

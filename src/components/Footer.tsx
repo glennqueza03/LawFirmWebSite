@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
           <div className="flex items-center justify-center space-x-2 mt-2">
             <span className="text-sm text-gray-300">Created by</span>
             <img 
-              src="/images/croppedlogo.png" 
+              src="/images/croppedlogo.jpg" 
               alt="Logo" 
               className="h-24 w-auto"
             />

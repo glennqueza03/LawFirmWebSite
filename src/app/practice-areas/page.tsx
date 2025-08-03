@@ -28,7 +28,7 @@ const practiceAreas = [
     title: 'Personal Injury',
     description: 'We help victims of accidents and injuries get the compensation they deserve. Our experienced attorneys handle car accidents, slip and falls, medical malpractice, and more.',
     icon: '🏥',
-    image: '/images/criminal.jpg', // Temporarily using criminal.jpg instead of carcrash.jpg
+    image: '/images/carinjury.jpg',
     longDescription: 'If you\'ve been injured due to someone else\'s negligence, you deserve compensation for your medical bills, lost wages, and pain and suffering. Our personal injury attorneys have successfully recovered millions of dollars for our clients. We handle car accidents, slip and falls, medical malpractice, workplace injuries, and other personal injury cases. We work on a contingency fee basis, meaning you don\'t pay unless we win.'
   }
 ];

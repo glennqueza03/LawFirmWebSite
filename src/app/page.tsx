@@ -272,12 +272,6 @@ export default function Home() {
                   src="/images/croppedlawyers.jpg" 
                   alt="Professional lawyers" 
                   className="w-full h-auto rounded-lg"
-                  onError={(e) => {
-                    console.error('Image failed to load:', (e.target as HTMLImageElement).src);
-                  }}
-                  onLoad={(e) => {
-                    console.log('Image loaded successfully:', (e.target as HTMLImageElement).src);
-                  }}
                 />
               </div>
             </div>

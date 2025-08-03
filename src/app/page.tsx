@@ -272,8 +272,9 @@ export default function Home() {
                 <Image 
                   src="/images/croppedlawyers.jpg" 
                   alt="Professional lawyers" 
-                  width={500}
-                  height={300}
+                  width={600}
+                  height={400}
+                  priority
                   className="w-full h-auto rounded-lg"
                 />
               </div>
@@ -327,9 +328,11 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold/50 to-gold/20 rounded-lg transform rotate-3 scale-105"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 rounded-lg transform -rotate-1 scale-105"></div>
-                  <img 
+                  <Image 
                     src="/images/aboutus.jpg" 
                     alt="About our law firm" 
+                    width={500}
+                    height={300}
                     className="relative w-full h-auto rounded-lg shadow-2xl border-4 border-gold"
                   />
                 </div>
@@ -354,9 +357,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <img 
+                <Image 
                   src="/images/criminal.jpg" 
                   alt="Criminal Defense" 
+                  width={400}
+                  height={300}
                   className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -371,9 +376,11 @@ export default function Home() {
             
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <img 
+                <Image 
                   src="/images/immigration.jpg" 
                   alt="Immigration Law" 
+                  width={400}
+                  height={300}
                   className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -388,9 +395,11 @@ export default function Home() {
             
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-1">
               <div className="overflow-hidden rounded-lg mb-4">
-                <img 
+                <Image 
                   src="/images/carcrash.jpg" 
                   alt="Personal Injury" 
+                  width={400}
+                  height={300}
                   className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>

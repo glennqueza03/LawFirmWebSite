@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import ContactButton from '../../components/ContactButton';
@@ -98,9 +99,11 @@ export default function PracticeAreas() {
                 </div>
               </div>
               <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                <img 
+                <Image 
                   src={area.image} 
                   alt={area.title} 
+                  width={600}
+                  height={400}
                   className="w-full h-96 object-cover rounded-lg shadow-2xl"
                 />
               </div>

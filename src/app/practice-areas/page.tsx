@@ -122,7 +122,7 @@ export default function PracticeAreas() {
             Contact us today for a consultation about your case.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="bg-gold text-black py-4 px-8 rounded-lg font-bold text-lg hover:bg-gold/90 transition-all duration-300">
+            <a href="/#contact" className="bg-gold text-black py-4 px-8 rounded-lg font-bold text-lg hover:bg-gold/90 transition-all duration-300">
               Contact Us
             </a>
             <a href="tel:+15551234567" className="border-2 border-gold text-gold py-4 px-8 rounded-lg font-bold text-lg hover:bg-gold hover:text-black transition-all duration-300">

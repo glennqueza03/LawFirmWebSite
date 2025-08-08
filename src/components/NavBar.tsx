@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaBars, FaTimes, FaChevronDown, FaPhone } from "react-icons/fa";
 
 interface NavBarProps {
   language: string;
@@ -12,128 +12,163 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPracticeAreasOpen, setIsPracticeAreasOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const togglePracticeAreas = () => {
-    setIsPracticeAreasOpen(!isPracticeAreasOpen);
-  };
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const togglePracticeAreas = () => setIsPracticeAreasOpen(!isPracticeAreasOpen);
+  const toggleLanguage = () => setLanguage(language === "en" ? "es" : "en");
 
   return (
-    <nav className="bg-black shadow-lg fixed w-full top-0 z-50 border-b border-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+    <nav className="bg-black/95 backdrop-blur-md border-b border-gold/20 fixed w-full top-0 z-50">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="text-xl md:text-2xl font-serif font-bold text-white hover:text-gold transition-colors duration-300">
-            <span className="text-gold">Law</span>Firm
+          <a
+            href="/"
+            className="text-2xl md:text-3xl font-serif font-bold text-gold hover:opacity-90 transition-opacity"
+          >
+            <span className="text-gold">Law</span>
+            <span className="text-white">Firm</span>
           </a>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            <a href="/" className="text-white hover:text-gold transition-colors duration-300 font-medium">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            <a
+              href="/"
+              className="text-gray-300 hover:text-gold transition-colors duration-300"
+            >
               Home
             </a>
-            
-            {/* Practice Areas Dropdown */}
             <div className="relative">
               <button
                 onClick={togglePracticeAreas}
-                className="text-white hover:text-gold transition-colors duration-300 font-medium flex items-center space-x-1"
+                className="flex items-center text-gray-300 hover:text-gold transition-colors duration-300"
               >
-                <span>Practice Areas</span>
-                <FaChevronDown className={`transition-transform duration-300 ${isPracticeAreasOpen ? 'rotate-180' : ''}`} />
+                Practice Areas
+                <FaChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform duration-300 ${
+                    isPracticeAreasOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
-              
               {isPracticeAreasOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50">
-                  <a href="/practice-areas#criminal" className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-gold transition-colors duration-300">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl z-50">
+                  <a
+                    href="/practice-areas#criminal"
+                    className="block px-4 py-3 text-gray-200 hover:bg-gray-800 hover:text-gold transition-colors"
+                  >
                     Criminal Defense
                   </a>
-                  <a href="/practice-areas#immigration" className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-gold transition-colors duration-300">
+                  <a
+                    href="/practice-areas#immigration"
+                    className="block px-4 py-3 text-gray-200 hover:bg-gray-800 hover:text-gold transition-colors"
+                  >
                     Immigration Law
                   </a>
-                  <a href="/practice-areas#personal-injury" className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-gold transition-colors duration-300">
+                  <a
+                    href="/practice-areas#personal-injury"
+                    className="block px-4 py-3 text-gray-200 hover:bg-gray-800 hover:text-gold transition-colors"
+                  >
                     Personal Injury
                   </a>
                 </div>
               )}
             </div>
-            
-            <a href="/contact" className="text-white hover:text-gold transition-colors duration-300 font-medium">
+            <a
+              href="/#contact"
+              className="text-gray-300 hover:text-gold transition-colors duration-300"
+            >
               Contact
             </a>
-            <a href="#consultation" className="bg-gold text-black px-4 md:px-6 py-2 rounded-lg font-bold hover:bg-gold/90 transition-all duration-300 text-sm md:text-base">
-              Consultation
-            </a>
+          </nav>
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={toggleLanguage}
-              className="border border-gold text-gold px-3 py-2 rounded-lg font-medium hover:bg-gold hover:text-black transition-all duration-300 text-sm"
+              className="border border-gold text-gold px-4 py-2 rounded-md font-medium hover:bg-gold hover:text-black transition-colors"
             >
-              {language === 'en' ? 'Español' : 'English'}
+              {language === "en" ? "Español" : "English"}
             </button>
+            <a
+              href="#consultation"
+              className="bg-gold text-black px-4 py-2 rounded-md font-bold hover:bg-gold/90 transition-colors flex items-center"
+            >
+              <FaPhone className="h-4 w-4 mr-2" /> Consultation
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-white hover:text-gold transition-colors duration-300 p-2"
-            >
-              {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-            </button>
-          </div>
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden text-gray-300 hover:text-gold transition-colors duration-300"
+          >
+            {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+          </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 bg-black border-t border-gray-800">
-            <div className="flex flex-col space-y-4 pt-4">
-              <a href="/" className="text-white hover:text-gold transition-colors duration-300 font-medium px-4 py-2">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gold/20">
+            <nav className="flex flex-col space-y-4 mt-4">
+              <a
+                href="/"
+                className="text-gray-300 hover:text-gold transition-colors duration-300"
+              >
                 Home
               </a>
-              
-              <div className="px-4">
-                <button
-                  onClick={togglePracticeAreas}
-                  className="text-white hover:text-gold transition-colors duration-300 font-medium flex items-center justify-between w-full py-2"
-                >
-                  <span>Practice Areas</span>
-                  <FaChevronDown className={`transition-transform duration-300 ${isPracticeAreasOpen ? 'rotate-180' : ''}`} />
-                </button>
-                
-                {isPracticeAreasOpen && (
-                  <div className="ml-4 mt-2 space-y-2">
-                    <a href="/practice-areas#criminal" className="block text-gray-300 hover:text-gold transition-colors duration-300 py-2">
-                      Criminal Defense
-                    </a>
-                    <a href="/practice-areas#immigration" className="block text-gray-300 hover:text-gold transition-colors duration-300 py-2">
-                      Immigration Law
-                    </a>
-                    <a href="/practice-areas#personal-injury" className="block text-gray-300 hover:text-gold transition-colors duration-300 py-2">
-                      Personal Injury
-                    </a>
-                  </div>
-                )}
-              </div>
-              
-              <a href="/contact" className="text-white hover:text-gold transition-colors duration-300 font-medium px-4 py-2">
+              <button
+                onClick={togglePracticeAreas}
+                className="flex items-center justify-between text-gray-300 hover:text-gold transition-colors"
+              >
+                Practice Areas
+                <FaChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform duration-300 ${
+                    isPracticeAreasOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isPracticeAreasOpen && (
+                <div className="ml-4 space-y-2">
+                  <a
+                    href="/practice-areas#criminal"
+                    className="block text-gray-400 hover:text-gold"
+                  >
+                    Criminal Defense
+                  </a>
+                  <a
+                    href="/practice-areas#immigration"
+                    className="block text-gray-400 hover:text-gold"
+                  >
+                    Immigration Law
+                  </a>
+                  <a
+                    href="/practice-areas#personal-injury"
+                    className="block text-gray-400 hover:text-gold"
+                  >
+                    Personal Injury
+                  </a>
+                </div>
+              )}
+              <a
+                href="/#contact"
+                className="text-gray-300 hover:text-gold transition-colors duration-300"
+              >
                 Contact
               </a>
-              <a href="#consultation" className="bg-gold text-black px-4 py-3 rounded-lg font-bold text-center hover:bg-gold/90 transition-all duration-300 mx-4">
-                Consultation
-              </a>
-              <button
-                onClick={toggleLanguage}
-                className="border border-gold text-gold px-4 py-3 rounded-lg font-medium hover:bg-gold hover:text-black transition-all duration-300 mx-4 text-center"
-              >
-                {language === 'en' ? 'Español' : 'English'}
-              </button>
-            </div>
+              <div className="flex flex-col space-y-2 pt-2">
+                <button
+                  onClick={toggleLanguage}
+                  className="border border-gold text-gold px-4 py-2 rounded-md font-medium hover:bg-gold hover:text-black transition-colors"
+                >
+                  {language === "en" ? "Español" : "English"}
+                </button>
+                <a
+                  href="#consultation"
+                  className="bg-gold text-black px-4 py-2 rounded-md font-bold hover:bg-gold/90 transition-colors text-center flex items-center justify-center"
+                >
+                  <FaPhone className="h-4 w-4 mr-2" /> Consultation
+                </a>
+              </div>
+            </nav>
           </div>
         )}
       </div>

@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ContactButton from '../components/ContactButton';
 import ConsultationForm from '../components/ConsultationForm';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaChevronLeft, FaChevronRight, FaStar, FaComments, FaArrowDown } from 'react-icons/fa';
 
 // Translation data
 const translations = {
@@ -242,43 +242,84 @@ export default function Home() {
       <NavBar language={language} setLanguage={setLanguage} />
       
       {/* Hero Section */}
-      <section className="relative bg-black text-white py-16 md:py-32 mt-16 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="scroll-animate transform translate-x-[-100px] opacity-0 transition-all duration-1000">
-              <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold mb-6 md:mb-8 text-gold">
-                {t.hero.title}
-              </h1>
-              <p className="text-lg md:text-xl lg:text-2xl mb-4 text-white">
-                {t.hero.subtitle}
-              </p>
-              <p className="text-base md:text-lg mb-6 md:mb-8 text-white">
-                {t.hero.tagline}
-              </p>
-              <div className="flex items-center space-x-2 text-white mb-6 md:mb-8">
-                <span className="text-base md:text-lg">{t.hero.stats}</span>
+      <section id="home" className="relative min-h-screen w-full flex items-center justify-center mt-16 bg-black">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#d4af37_0%,_transparent_50%)]" />
+        </div>
+
+        <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            {/* Left: Headline, subheadline, CTA */}
+            <div className="space-y-8 text-center lg:text-left">
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight text-gold">
+                  {t.hero.title.split(" ").join("\n").split('\n').map((line, i) => (
+                    <span key={i} className="block">{line}</span>
+                  ))}
+                </h1>
+                <div className="space-y-4">
+                  <h2 className="text-xl md:text-2xl text-white font-medium">
+                    {t.hero.subtitle}
+                  </h2>
+                  <p className="text-lg text-gray-300">{t.hero.tagline}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-gold">{t.hero.stats}</p>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#consultation" className="bg-gold text-black py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold/90 transition-all duration-300 text-center">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#consultation" className="bg-gold text-black font-bold px-8 py-4 rounded-md shadow hover:bg-gold/90 transition-colors text-lg flex items-center justify-center">
+                  <FaComments className="h-5 w-5 mr-2" />
                   {t.hero.consultationBtn}
                 </a>
-                <a href="tel:+15551234567" className="border-2 border-gold text-gold py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold hover:text-black transition-all duration-300 text-center">
+                <a href="tel:+15551234567" className="border border-gold text-gold px-8 py-4 rounded-md font-bold hover:bg-gold hover:text-black transition-colors text-lg flex items-center justify-center">
+                  <FaPhone className="h-5 w-5 mr-2" />
                   {t.hero.callBtn}
                 </a>
               </div>
+
+              {/* Trust Indicators */}
+              <div className="flex items-center justify-center lg:justify-start space-x-8 pt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-gold">500+</div>
+                  <div className="text-sm text-gray-400">{t.about.casesWon}</div>
+                </div>
+                <div className="h-12 w-px bg-gold/30" />
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-gold">25+</div>
+                  <div className="text-sm text-gray-400">{t.about.yearsExp}</div>
+                </div>
+                <div className="h-12 w-px bg-gold/30" />
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-gold">100%</div>
+                  <div className="text-sm text-gray-400">{t.about.satisfaction}</div>
+                </div>
+              </div>
             </div>
-            <div className="scroll-animate transform translate-x-[100px] opacity-0 transition-all duration-1000">
-              <div className="border-4 border-gold rounded-lg p-2">
-                <Image 
-                  src="/images/croppedlawyers.jpg" 
-                  alt="Professional lawyers" 
-                  width={600}
-                  height={400}
-                  className="w-full h-auto rounded-lg"
+
+            {/* Right: Team Image with layered frames */}
+            <div className="relative flex justify-center items-center">
+              <div className="relative w-full max-w-xl lg:max-w-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/40 to-transparent rounded-2xl transform rotate-3" />
+                <div className="absolute inset-0 bg-gray-700/30 rounded-2xl transform -rotate-1" />
+                <Image
+                  src="/images/croppedlawyers.jpg"
+                  alt="Professional legal team"
+                  width={900}
+                  height={675}
+                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-gold/40"
+                  priority
                 />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent" />
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-10">
+          <FaArrowDown className="h-6 w-6 text-gold" />
         </div>
       </section>
 
@@ -294,47 +335,97 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 md:py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div className="scroll-animate transform translate-x-[-100px] opacity-0 transition-all duration-1000">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold mb-6 md:mb-8">
+      <section id="about" className="relative py-16 md:py-20 bg-gray-900 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute -top-10 -left-10 w-80 h-80 bg-gold rounded-full blur-3xl opacity-20" />
+          <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-gold rounded-full blur-3xl opacity-20" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Content */}
+            <div className="space-y-8 scroll-animate transform translate-x-[-100px] opacity-0 transition-all duration-1000">
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold">
                   {t.about.title}
                 </h2>
-                <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6">
-                  {t.about.description1}
-                </p>
-                <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6">
-                  {t.about.description2}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8">
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-gold mb-2">500+</div>
-                    <div className="text-gray-300 text-sm md:text-base">{t.about.casesWon}</div>
+                <div className="space-y-4 text-gray-300 text-base md:text-lg leading-relaxed">
+                  <p>{t.about.description1}</p>
+                  <p>{t.about.description2}</p>
+                </div>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-3 gap-6">
+                <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-gold/20">
+                  <div className="text-2xl md:text-3xl font-bold text-gold mb-2">500+</div>
+                  <div className="text-sm text-gray-400">{t.about.casesWon}</div>
+                </div>
+                <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-gold/20">
+                  <div className="text-2xl md:text-3xl font-bold text-gold mb-2">25+</div>
+                  <div className="text-sm text-gray-400">{t.about.yearsExp}</div>
+                </div>
+                <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-gold/20">
+                  <div className="text-2xl md:text-3xl font-bold text-gold mb-2">100%</div>
+                  <div className="text-sm text-gray-400">{t.about.satisfaction}</div>
+                </div>
+              </div>
+
+              {/* Key Features */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-center space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
+                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.5 9.7-7 10-3.5-.3-7-5-7-10V6l7-4z"/></svg>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-gold mb-2">25+</div>
-                    <div className="text-gray-300 text-sm md:text-base">{t.about.yearsExp}</div>
+                  <div>
+                    <h3 className="font-semibold text-white">Trusted Defense</h3>
+                    <p className="text-sm text-gray-400">Protecting your rights</p>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-gold mb-2">100%</div>
-                    <div className="text-gray-300 text-sm md:text-base">{t.about.satisfaction}</div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
+                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 4.8L20 8l-4 3.9.9 5.6L12 15.8 7.1 17.5 8 11.9 4 8l5.6-1.2L12 2z"/></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Award Winning</h3>
+                    <p className="text-sm text-gray-400">Recognized excellence</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
+                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11a4 4 0 11-8 0 4 4 0 018 0zm-9 7a6 6 0 0110 0v2H7v-2z"/></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Client Focused</h3>
+                    <p className="text-sm text-gray-400">Your success is our priority</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
+                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h10v2H7V7zm-2 4h14v2H5v-2zm3 4h8v2H8v-2z"/></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Fair Justice</h3>
+                    <p className="text-sm text-gray-400">Fighting for what's right</p>
                   </div>
                 </div>
               </div>
-              <div className="scroll-animate transform translate-x-[100px] opacity-0 transition-all duration-1000">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold/50 to-gold/20 rounded-lg transform rotate-3 scale-105"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 rounded-lg transform -rotate-1 scale-105"></div>
-                  <Image 
-                    src="/images/aboutus.jpg" 
-                    alt="About our law firm" 
-                    width={500}
-                    height={300}
-                    className="relative w-full h-auto rounded-lg shadow-2xl border-4 border-gold"
-                  />
-                </div>
+            </div>
+
+            {/* Right Content - Layered image */}
+            <div className="relative scroll-animate transform translate-x-[100px] opacity-0 transition-all duration-1000">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/30 to-transparent rounded-2xl transform -rotate-3" />
+                <div className="absolute inset-0 bg-gold/10 rounded-2xl transform rotate-1" />
+                <Image
+                  src="/images/aboutus.jpg"
+                  alt="Senior partner in law office"
+                  width={600}
+                  height={800}
+                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-gold/30"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
               </div>
             </div>
           </div>
@@ -490,7 +581,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20 bg-black">
+      <section id="contact" className="py-16 md:py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold mb-4 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
@@ -590,7 +681,7 @@ export default function Home() {
             {t.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
-            <a href="/contact" className="bg-gold text-black py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold/90 transition-all duration-300">
+            <a href="/#contact" className="bg-gold text-black py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold/90 transition-all duration-300">
               {t.cta.contactBtn}
             </a>
             <a href="tel:+15551234567" className="border-2 border-gold text-gold py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold hover:text-black transition-all duration-300">

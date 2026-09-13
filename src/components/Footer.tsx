@@ -3,29 +3,29 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedin
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black border-t border-gold/20">
+    <footer className="border-t border-[#35516a] bg-[#19324a] text-[#f4f1eb]">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="text-3xl font-serif font-bold">
-              <span className="text-gold">Law</span><span className="text-white">Firm</span>
+            <div className="font-serif text-3xl font-bold">
+              <span className="text-[#e5a57f]">RGV</span><span className="text-[#f4f1eb]"> Legal</span>
             </div>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="leading-relaxed text-[#b8c5cc]">
               Dedicated to fighting for justice and protecting the rights of our clients. Your trusted legal partner with decades of experience.
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all duration-300">
+              <a href="#" className="flex h-10 w-10 items-center justify-center bg-[#244762] text-[#e5a57f] transition-all duration-300 hover:bg-[#b56b45] hover:text-white">
                 <FaFacebookF className="h-4 w-4" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all duration-300">
+              <a href="#" className="flex h-10 w-10 items-center justify-center bg-[#244762] text-[#e5a57f] transition-all duration-300 hover:bg-[#b56b45] hover:text-white">
                 <FaTwitter className="h-4 w-4" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all duration-300">
+              <a href="#" className="flex h-10 w-10 items-center justify-center bg-[#244762] text-[#e5a57f] transition-all duration-300 hover:bg-[#b56b45] hover:text-white">
                 <FaLinkedinIn className="h-4 w-4" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-all duration-300">
+              <a href="#" className="flex h-10 w-10 items-center justify-center bg-[#244762] text-[#e5a57f] transition-all duration-300 hover:bg-[#b56b45] hover:text-white">
                 <FaInstagram className="h-4 w-4" />
               </a>
             </div>
@@ -33,51 +33,52 @@ const Footer: React.FC = () => {
 
           {/* Practice Areas */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-white">Practice Areas</h3>
+            <h3 className="text-xl font-bold text-[#f4f1eb]">Practice Areas</h3>
             <ul className="space-y-3">
-              <li><a href="/practice-areas#criminal" className="text-gray-400 hover:text-gold transition-colors duration-300">Criminal Defense</a></li>
-              <li><a href="/practice-areas#personal-injury" className="text-gray-400 hover:text-gold transition-colors duration-300">Personal Injury</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">Real Estate Law</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">Business Law</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">Family Law</a></li>
-              <li><a href="/practice-areas#immigration" className="text-gray-400 hover:text-gold transition-colors duration-300">Immigration Law</a></li>
+              <li><a href="/practice-areas#criminal" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Criminal Defense</a></li>
+              <li><a href="/practice-areas#personal-injury" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Personal Injury</a></li>
+              <li><a href="#" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Real Estate Law</a></li>
+              <li><a href="#" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Business Law</a></li>
+              <li><a href="#" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Family Law</a></li>
+              <li><a href="/practice-areas#immigration" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Immigration Law</a></li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-white">Quick Links</h3>
+            <h3 className="text-xl font-bold text-[#f4f1eb]">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="/#about" className="text-gray-400 hover:text-gold transition-colors duration-300">About Us</a></li>
-              <li><a href="/#consultation" className="text-gray-400 hover:text-gold transition-colors duration-300">Request Consultation</a></li>
-              <li><a href="/#contact" className="text-gray-400 hover:text-gold transition-colors duration-300">Contact</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">Client Reviews</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">Privacy Policy</a></li>
+              <li><a href="/#about" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">About Us</a></li>
+              <li><a href="/#consultation" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Request Consultation</a></li>
+              <li><a href="/#contact" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Contact</a></li>
+              <li><a href="#" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Client Reviews</a></li>
+              <li><a href="#" className="text-[#b8c5cc] transition-colors duration-300 hover:text-[#e5a57f]">Privacy Policy</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-white">Contact Us</h3>
+            <h3 className="text-xl font-bold text-[#f4f1eb]">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <FaPhone className="h-5 w-5 text-gold mt-1 flex-shrink-0" />
+                <FaPhone className="mt-1 h-5 w-5 flex-shrink-0 text-[#e5a57f]" />
                 <div>
-                  <p className="text-white font-semibold">(555) 123-4567</p>
-                  <p className="text-sm text-gray-400">24/7 Emergency Line</p>
+                  <p className="font-semibold text-[#f4f1eb]">(555) 123-4567</p>
+                  <p className="text-sm text-[#b8c5cc]">24/7 Emergency Line</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <FaEnvelope className="h-5 w-5 text-gold mt-1 flex-shrink-0" />
+                <FaEnvelope className="mt-1 h-5 w-5 flex-shrink-0 text-[#e5a57f]" />
                 <div>
-                  <p className="text-white">glennquezada14@gmail.com</p>
-                  <p className="text-sm text-gray-400">Quick Response</p>
+                  <p className="text-[#f4f1eb]">glennquezada14@gmail.com</p>
+                  <p className="text-sm text-[#b8c5cc]">Quick Response</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <FaMapMarkerAlt className="h-5 w-5 text-gold mt-1 flex-shrink-0" />
+                <FaMapMarkerAlt className="mt-1 h-5 w-5 flex-shrink-0 text-[#e5a57f]" />
                 <div>
-                  <p className="text-white">123 Legal Street, City, State 12345</p>
+                  <p className="text-[#f4f1eb]">McAllen, Texas</p>
+                  <p className="text-sm text-[#b8c5cc]">Serving the Rio Grande Valley</p>
                 </div>
               </div>
             </div>
@@ -85,11 +86,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-gold/20">
+        <div className="border-t border-[#35516a] py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">© 2024 LawFirm. All rights reserved.</div>
+            <div className="text-sm text-[#b8c5cc]">© 2024 LawFirm. All rights reserved.</div>
             <div className="flex items-center space-x-3">
-              <span className="text-xl text-gray-300">Created by</span>
+              <span className="text-xl text-[#b8c5cc]">Created by</span>
               {/* Keep logo picture */}
               <img src="/images/croppedlogo.jpg" alt="Logo" className="h-16 w-auto" />
             </div>

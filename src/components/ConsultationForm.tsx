@@ -140,24 +140,24 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
                      formData.message && formData.phone && formData.email;
 
   return (
-    <div className={`bg-gray-800 rounded-lg shadow-xl p-6 lg:p-8 ${className}`}>
-      <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gold mb-6">
+    <div className={`bg-[#f4f1eb] p-6 shadow-xl lg:p-8 ${className}`}>
+      <h3 className="mb-6 font-serif text-2xl font-bold text-[#19324a] lg:text-3xl">
         {t.title}
       </h3>
       
       {status === 'success' && (
-        <div className="mb-6 p-4 bg-green-900 border border-green-600 rounded-lg flex items-center space-x-3">
+        <div className="mb-6 flex items-center space-x-3 border border-green-600 bg-green-50 p-4">
           <FaCheck className="text-green-400 text-xl" />
-          <p className="text-green-200 font-medium">
+          <p className="font-medium text-green-800">
             {t.success}
           </p>
         </div>
       )}
 
       {status === 'error' && (
-        <div className="mb-6 p-4 bg-red-900 border border-red-600 rounded-lg flex items-center space-x-3">
+        <div className="mb-6 flex items-center space-x-3 border border-red-600 bg-red-50 p-4">
           <FaExclamationTriangle className="text-red-400 text-xl" />
-          <p className="text-red-200 font-medium">{errorMessage}</p>
+          <p className="font-medium text-red-800">{errorMessage}</p>
         </div>
       )}
 
@@ -176,7 +176,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-white mb-2">
+            <label htmlFor="firstName" className="mb-2 block text-sm font-medium text-[#19324a]">
               {t.firstName}
             </label>
             <input
@@ -186,13 +186,13 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
               value={formData.firstName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
+              className="w-full border border-[#c9bcae] bg-white px-4 py-3 text-[#19324a] transition-all duration-300 placeholder:text-[#8a969c] focus:border-[#b56b45] focus:ring-1 focus:ring-[#b56b45]"
               placeholder={t.placeholder.firstName}
             />
           </div>
 
           <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-white mb-2">
+            <label htmlFor="lastName" className="mb-2 block text-sm font-medium text-[#19324a]">
               {t.lastName}
             </label>
             <input
@@ -202,14 +202,14 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
               value={formData.lastName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
+              className="w-full border border-[#c9bcae] bg-white px-4 py-3 text-[#19324a] transition-all duration-300 placeholder:text-[#8a969c] focus:border-[#b56b45] focus:ring-1 focus:ring-[#b56b45]"
               placeholder={t.placeholder.lastName}
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="isNewClient" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="isNewClient" className="mb-2 block text-sm font-medium text-[#19324a]">
             {t.newClient}
           </label>
           <select
@@ -218,7 +218,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
             value={formData.isNewClient}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
+            className="w-full border border-[#c9bcae] bg-white px-4 py-3 text-[#19324a] transition-all duration-300 focus:border-[#b56b45] focus:ring-1 focus:ring-[#b56b45]"
           >
             <option value="">{t.options.select}</option>
             <option value="yes">{t.options.yes}</option>
@@ -228,7 +228,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+            <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#19324a]">
               {t.phone}
             </label>
             <input
@@ -238,13 +238,13 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
+              className="w-full border border-[#c9bcae] bg-white px-4 py-3 text-[#19324a] transition-all duration-300 placeholder:text-[#8a969c] focus:border-[#b56b45] focus:ring-1 focus:ring-[#b56b45]"
               placeholder={t.placeholder.phone}
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+            <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#19324a]">
               {t.email}
             </label>
             <input
@@ -254,14 +254,14 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
+              className="w-full border border-[#c9bcae] bg-white px-4 py-3 text-[#19324a] transition-all duration-300 placeholder:text-[#8a969c] focus:border-[#b56b45] focus:ring-1 focus:ring-[#b56b45]"
               placeholder={t.placeholder.email}
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#19324a]">
             {t.message}
           </label>
           <textarea
@@ -271,7 +271,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
             onChange={handleChange}
             required
             rows={5}
-            className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300 resize-none bg-gray-700 text-white"
+            className="w-full resize-none border border-[#c9bcae] bg-white px-4 py-3 text-[#19324a] transition-all duration-300 placeholder:text-[#8a969c] focus:border-[#b56b45] focus:ring-1 focus:ring-[#b56b45]"
             placeholder={t.placeholder.message}
           />
         </div>
@@ -294,7 +294,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({ className = '', onS
         </button>
       </form>
 
-      <p className="text-sm text-gray-400 mt-4 text-center">
+      <p className="mt-4 text-center text-sm text-[#52616b]">
         {t.required}
       </p>
     </div>

@@ -17,30 +17,30 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
   const toggleLanguage = () => setLanguage(language === "en" ? "es" : "en");
 
   return (
-    <nav className="bg-black/95 backdrop-blur-md border-b border-gold/20 fixed w-full top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#19324a]/95 backdrop-blur-md">
+      <div className="container mx-auto px-6 py-4 md:px-10">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
             href="/"
-            className="text-2xl md:text-3xl font-serif font-bold text-gold hover:opacity-90 transition-opacity"
+            className="font-serif text-2xl font-bold tracking-tight text-[#f4f1eb] transition-opacity hover:opacity-90 md:text-3xl"
           >
-            <span className="text-gold">Law</span>
-            <span className="text-white">Firm</span>
+            <span className="text-[#e5a57f]">RGV</span>
+            <span className="text-[#f4f1eb]"> Legal</span>
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <a
               href="/"
-              className="text-gray-300 hover:text-gold transition-colors duration-300"
+              className="text-sm text-[#d8e0e4] transition-colors duration-300 hover:text-[#e5a57f]"
             >
               Home
             </a>
             <div className="relative">
               <button
                 onClick={togglePracticeAreas}
-                className="flex items-center text-gray-300 hover:text-gold transition-colors duration-300"
+                className="flex items-center text-sm text-[#d8e0e4] transition-colors duration-300 hover:text-[#e5a57f]"
               >
                 Practice Areas
                 <FaChevronDown
@@ -50,22 +50,22 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
                 />
               </button>
               {isPracticeAreasOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl z-50">
+                <div className="absolute left-0 top-full z-50 mt-2 w-56 border border-[#d8e0e4]/20 bg-[#19324a] shadow-2xl">
                   <a
                     href="/practice-areas#criminal"
-                    className="block px-4 py-3 text-gray-200 hover:bg-gray-800 hover:text-gold transition-colors"
+                    className="block px-4 py-3 text-[#d8e0e4] transition-colors hover:bg-[#244762] hover:text-[#e5a57f]"
                   >
                     Criminal Defense
                   </a>
                   <a
                     href="/practice-areas#immigration"
-                    className="block px-4 py-3 text-gray-200 hover:bg-gray-800 hover:text-gold transition-colors"
+                    className="block px-4 py-3 text-[#d8e0e4] transition-colors hover:bg-[#244762] hover:text-[#e5a57f]"
                   >
                     Immigration Law
                   </a>
                   <a
                     href="/practice-areas#personal-injury"
-                    className="block px-4 py-3 text-gray-200 hover:bg-gray-800 hover:text-gold transition-colors"
+                    className="block px-4 py-3 text-[#d8e0e4] transition-colors hover:bg-[#244762] hover:text-[#e5a57f]"
                   >
                     Personal Injury
                   </a>
@@ -74,7 +74,7 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
             </div>
             <a
               href="/#contact"
-              className="text-gray-300 hover:text-gold transition-colors duration-300"
+              className="text-sm text-[#d8e0e4] transition-colors duration-300 hover:text-[#e5a57f]"
             >
               Contact
             </a>
@@ -84,13 +84,13 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={toggleLanguage}
-              className="border border-gold text-gold px-4 py-2 rounded-md font-medium hover:bg-gold hover:text-black transition-colors"
+              className="border border-[#d8e0e4]/50 px-4 py-2 text-sm font-medium text-[#f4f1eb] transition-colors hover:border-[#e5a57f] hover:text-[#e5a57f]"
             >
               {language === "en" ? "Español" : "English"}
             </button>
             <a
               href="#consultation"
-              className="bg-gold text-black px-4 py-2 rounded-md font-bold hover:bg-gold/90 transition-colors flex items-center"
+              className="flex items-center bg-[#b56b45] px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-[#985437]"
             >
               <FaPhone className="h-4 w-4 mr-2" /> Consultation
             </a>
@@ -99,7 +99,7 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-gray-300 hover:text-gold transition-colors duration-300"
+            className="text-[#d8e0e4] transition-colors duration-300 hover:text-[#e5a57f] lg:hidden"
           >
             {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
           </button>
@@ -107,17 +107,17 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gold/20">
+          <div className="mt-4 border-t border-white/10 pb-4 lg:hidden">
             <nav className="flex flex-col space-y-4 mt-4">
               <a
                 href="/"
-                className="text-gray-300 hover:text-gold transition-colors duration-300"
+                className="text-[#d8e0e4] transition-colors duration-300 hover:text-[#e5a57f]"
               >
                 Home
               </a>
               <button
                 onClick={togglePracticeAreas}
-                className="flex items-center justify-between text-gray-300 hover:text-gold transition-colors"
+                className="flex items-center justify-between text-[#d8e0e4] transition-colors hover:text-[#e5a57f]"
               >
                 Practice Areas
                 <FaChevronDown
@@ -130,19 +130,19 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
                 <div className="ml-4 space-y-2">
                   <a
                     href="/practice-areas#criminal"
-                    className="block text-gray-400 hover:text-gold"
+                    className="block text-[#b8c5cc] hover:text-[#e5a57f]"
                   >
                     Criminal Defense
                   </a>
                   <a
                     href="/practice-areas#immigration"
-                    className="block text-gray-400 hover:text-gold"
+                    className="block text-[#b8c5cc] hover:text-[#e5a57f]"
                   >
                     Immigration Law
                   </a>
                   <a
                     href="/practice-areas#personal-injury"
-                    className="block text-gray-400 hover:text-gold"
+                    className="block text-[#b8c5cc] hover:text-[#e5a57f]"
                   >
                     Personal Injury
                   </a>
@@ -150,20 +150,20 @@ const NavBar: React.FC<NavBarProps> = ({ language, setLanguage }) => {
               )}
               <a
                 href="/#contact"
-                className="text-gray-300 hover:text-gold transition-colors duration-300"
+                className="text-[#d8e0e4] transition-colors duration-300 hover:text-[#e5a57f]"
               >
                 Contact
               </a>
               <div className="flex flex-col space-y-2 pt-2">
                 <button
                   onClick={toggleLanguage}
-                  className="border border-gold text-gold px-4 py-2 rounded-md font-medium hover:bg-gold hover:text-black transition-colors"
+                  className="border border-[#d8e0e4]/50 px-4 py-2 font-medium text-[#f4f1eb] transition-colors hover:border-[#e5a57f] hover:text-[#e5a57f]"
                 >
                   {language === "en" ? "Español" : "English"}
                 </button>
                 <a
                   href="#consultation"
-                  className="bg-gold text-black px-4 py-2 rounded-md font-bold hover:bg-gold/90 transition-colors text-center flex items-center justify-center"
+                  className="flex items-center justify-center bg-[#b56b45] px-4 py-2 text-center font-bold text-white transition-colors hover:bg-[#985437]"
                 >
                   <FaPhone className="h-4 w-4 mr-2" /> Consultation
                 </a>

@@ -16,24 +16,24 @@ const ContactButton: React.FC = () => {
         {/* Hover Popup */}
         {isHovered && (
           <div 
-            className="absolute bottom-full right-0 mb-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-4 w-64"
+            className="absolute bottom-full right-0 mb-0 w-64 border border-[#c9bcae] bg-[#f4f1eb] p-4 shadow-2xl"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <div className="text-center">
-              <div className="text-gold font-bold text-lg mb-2">Contact Us</div>
-              <div className="text-white mb-4">(555) 123-4567</div>
+              <div className="mb-2 text-lg font-bold text-[#19324a]">Contact Us</div>
+              <div className="mb-4 text-[#52616b]">(555) 123-4567</div>
               <div className="space-y-2">
                 <a 
                   href="#consultation" 
-                  className="block w-full bg-gold text-black py-2 px-4 rounded-lg font-bold text-sm hover:bg-gold/90 transition-all duration-300"
+                  className="block w-full bg-[#b56b45] px-4 py-2 text-sm font-bold text-white transition-all duration-300 hover:bg-[#985437]"
                   onClick={() => setIsHovered(false)}
                 >
                   Request Consultation
                 </a>
                 <a 
                   href="tel:+15551234567" 
-                  className="block w-full border border-gold text-gold py-2 px-4 rounded-lg font-bold text-sm hover:bg-gold hover:text-black transition-all duration-300"
+                  className="block w-full border border-[#19324a] px-4 py-2 text-sm font-bold text-[#19324a] transition-all duration-300 hover:bg-[#19324a] hover:text-white"
                   onClick={() => setIsHovered(false)}
                 >
                   Call Now
@@ -47,7 +47,7 @@ const ContactButton: React.FC = () => {
         
         {/* Phone Button */}
         <button 
-          className="bg-gold text-black p-4 rounded-full shadow-lg hover:bg-gold/90 transition-all duration-300 hover:scale-110"
+          className="rounded-full bg-[#b56b45] p-4 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#985437]"
           onClick={() => setIsHovered(!isHovered)}
         >
           <FaPhone size={24} />

@@ -12,9 +12,9 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaChevronLeft, FaChevronR
 const translations = {
   en: {
     hero: {
-      title: "THE PEOPLE'S LAWYER",
-      subtitle: "Passionately Fighting For You",
-      tagline: "You want experience, you got it. Qué más quieres!",
+      title: "LOCAL COUNSEL. SERIOUS ADVOCACY.",
+      subtitle: "A steady voice for South Texas",
+      tagline: "Serving McAllen, Edinburg, Mission, and the Rio Grande Valley.",
       stats: "MILLIONS RECOVERED FOR CLIENTS",
       consultationBtn: "Get Free Consultation",
       callBtn: "Call Now"
@@ -57,8 +57,8 @@ const translations = {
       email: "Email",
       address: "Address",
       hours: "Office Hours",
-      address1: "123 Legal Street",
-      address2: "City, State 12345",
+      address1: "McAllen office",
+      address2: "Serving the Rio Grande Valley",
       hours1: "Monday - Friday: 9:00 AM - 6:00 PM",
       hours2: "Saturday: 10:00 AM - 2:00 PM",
       hours3: "Sunday: Closed"
@@ -66,6 +66,17 @@ const translations = {
     consultation: {
       title: "Request a Consultation",
       subtitle: "Get the legal help you need. Fill out the form below and we'll get back to you promptly."
+    },
+    prep: {
+      eyebrow: "Make your first meeting count",
+      title: "Bring the facts. We will help with the rest.",
+      subtitle: "A few simple details can help us understand what you are facing and point you toward the right next step.",
+      items: [
+        { number: "01", title: "Tell us what happened", text: "Write down the timeline, key dates, and what outcome you need." },
+        { number: "02", title: "Gather your documents", text: "Bring notices, reports, contracts, photos, or court paperwork." },
+        { number: "03", title: "Ask every question", text: "Your consultation is a place to get clear about options, costs, and timing." }
+      ],
+      note: "We serve clients across Hidalgo, Starr, Cameron, and Willacy counties."
     },
     cta: {
       title: "Ready to Get Started?",
@@ -76,9 +87,9 @@ const translations = {
   },
   es: {
     hero: {
-      title: "EL ABOGADO DEL PUEBLO",
-      subtitle: "Luchando Apasionadamente Por Ti",
-      tagline: "Quieres experiencia, la tienes. ¡Qué más quieres!",
+      title: "ABOGADOS LOCALES. DEFENSA SERIA.",
+      subtitle: "Una voz firme para el sur de Texas",
+      tagline: "Sirviendo a McAllen, Edinburg, Mission y todo el Valle del Río Grande.",
       stats: "MILLONES RECUPERADOS PARA CLIENTES",
       consultationBtn: "Obtener Consulta Gratuita",
       callBtn: "Llamar Ahora"
@@ -121,8 +132,8 @@ const translations = {
       email: "Correo Electrónico",
       address: "Dirección",
       hours: "Horario de Oficina",
-      address1: "123 Calle Legal",
-      address2: "Ciudad, Estado 12345",
+      address1: "Oficina en McAllen",
+      address2: "Sirviendo al Valle del Río Grande",
       hours1: "Lunes - Viernes: 9:00 AM - 6:00 PM",
       hours2: "Sábado: 10:00 AM - 2:00 PM",
       hours3: "Domingo: Cerrado"
@@ -130,6 +141,17 @@ const translations = {
     consultation: {
       title: "Solicitar una Consulta",
       subtitle: "Obtén la ayuda legal que necesitas. Completa el formulario a continuación y te contactaremos pronto."
+    },
+    prep: {
+      eyebrow: "Aprovecha tu primera reunión",
+      title: "Trae los hechos. Nosotros te ayudamos con lo demás.",
+      subtitle: "Unos detalles sencillos pueden ayudarnos a entender tu situación y orientarte hacia el siguiente paso.",
+      items: [
+        { number: "01", title: "Cuéntanos qué pasó", text: "Anota la cronología, fechas importantes y el resultado que necesitas." },
+        { number: "02", title: "Reúne tus documentos", text: "Trae avisos, reportes, contratos, fotos o documentos de la corte." },
+        { number: "03", title: "Haz todas tus preguntas", text: "Tu consulta es para entender tus opciones, costos y tiempos." }
+      ],
+      note: "Atendemos clientes en los condados de Hidalgo, Starr, Cameron y Willacy."
     },
     cta: {
       title: "¿Listo para Comenzar?",
@@ -238,119 +260,124 @@ export default function Home() {
   const loopedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#f4f1eb] text-[#172536]">
       <NavBar language={language} setLanguage={setLanguage} />
       
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen w-full flex items-center justify-center mt-16 bg-black">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#d4af37_0%,_transparent_50%)]" />
-        </div>
+      <section id="home" className="relative flex min-h-[calc(100vh-4.5rem)] items-end overflow-hidden bg-[#19324a] pt-28 text-[#f4f1eb]">
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(110deg,rgba(25,50,74,0.82)_24%,rgba(25,50,74,0.52)_58%,rgba(25,50,74,0.2))]" />
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        >
+          <source src="/images/videos/vecteezy_lawyer-statue-on-desk_77281615.mp4" type="video/mp4" />
+          <source src="/images/videos/vecteezy_lawyer-statue-on-desk_77281615.MOV" type="video/quicktime" />
+        </video>
 
-        <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="container relative z-20 mx-auto w-full px-6 py-16 md:px-10 md:py-24">
+          <div className="grid grid-cols-1 items-end gap-16 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Left: Headline, subheadline, CTA */}
-            <div className="space-y-8 text-center lg:text-left">
-              <div className="space-y-6">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight text-gold">
-                  {t.hero.title.split(" ").join("\n").split('\n').map((line, i) => (
-                    <span key={i} className="block">{line}</span>
-                  ))}
+            <div className="max-w-3xl space-y-8 text-center lg:text-left">
+              <div className="space-y-5">
+                <p className="eyebrow hero-reveal hero-reveal-delay-1 text-[#e5a57f]">South Texas counsel · RGV rooted</p>
+                <h1 className="hero-reveal hero-reveal-delay-2 text-5xl font-normal leading-[1.05] text-[#f4f1eb] md:text-7xl lg:text-8xl">
+                  {t.hero.title}
                 </h1>
-                <div className="space-y-4">
-                  <h2 className="text-xl md:text-2xl text-white font-medium">
-                    {t.hero.subtitle}
-                  </h2>
-                  <p className="text-lg text-gray-300">{t.hero.tagline}</p>
-                  <p className="text-2xl md:text-3xl font-bold text-gold">{t.hero.stats}</p>
-                </div>
+                <p className="hero-reveal hero-reveal-delay-3 max-w-xl text-lg leading-8 text-[#d8e0e4] md:text-xl">
+                  {t.hero.tagline} {t.hero.subtitle}.
+                </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#consultation" className="bg-gold text-black font-bold px-8 py-4 rounded-md shadow hover:bg-gold/90 transition-colors text-lg flex items-center justify-center">
-                  <FaComments className="h-5 w-5 mr-2" />
-                  {t.hero.consultationBtn}
+              <div className="hero-reveal hero-reveal-delay-4 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+                <a href="#consultation" className="interactive-lift flex items-center justify-center bg-[#b56b45] px-7 py-4 text-base font-bold text-white transition-colors hover:bg-[#985437]">
+                  {t.hero.consultationBtn} <span className="ml-3">→</span>
                 </a>
-                <a href="tel:+15551234567" className="border border-gold text-gold px-8 py-4 rounded-md font-bold hover:bg-gold hover:text-black transition-colors text-lg flex items-center justify-center">
-                  <FaPhone className="h-5 w-5 mr-2" />
-                  {t.hero.callBtn}
+                <a href="tel:+15551234567" className="interactive-lift flex items-center justify-center border border-[#d8e0e4]/60 px-7 py-4 text-base font-bold text-[#f4f1eb] transition-colors hover:border-white hover:bg-white/10">
+                  {t.hero.callBtn} <span className="ml-3">↗</span>
                 </a>
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center justify-center lg:justify-start space-x-8 pt-8">
+              <div className="hero-reveal hero-reveal-delay-5 flex items-center justify-center space-x-6 border-t border-white/20 pt-7 lg:justify-start">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gold">500+</div>
-                  <div className="text-sm text-gray-400">{t.about.casesWon}</div>
+                  <div className="text-2xl font-bold text-[#e5a57f]">25+</div>
+                  <div className="text-xs uppercase tracking-wider text-[#b8c5cc]">Years advocating</div>
                 </div>
-                <div className="h-12 w-px bg-gold/30" />
+                <div className="h-10 w-px bg-white/20" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gold">25+</div>
-                  <div className="text-sm text-gray-400">{t.about.yearsExp}</div>
+                  <div className="text-2xl font-bold text-[#e5a57f]">500+</div>
+                  <div className="text-xs uppercase tracking-wider text-[#b8c5cc]">Cases handled</div>
                 </div>
-                <div className="h-12 w-px bg-gold/30" />
+                <div className="h-10 w-px bg-white/20" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gold">100%</div>
-                  <div className="text-sm text-gray-400">{t.about.satisfaction}</div>
+                  <div className="text-2xl font-bold text-[#e5a57f]">24/7</div>
+                  <div className="text-xs uppercase tracking-wider text-[#b8c5cc]">Emergency line</div>
                 </div>
               </div>
             </div>
 
-            {/* Right: Team Image with layered frames */}
-            <div className="relative flex justify-center items-center">
-              <div className="relative w-full max-w-xl lg:max-w-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/40 to-transparent rounded-2xl transform rotate-3" />
-                <div className="absolute inset-0 bg-gray-700/30 rounded-2xl transform -rotate-1" />
-                <Image
-                  src="/images/croppedlawyers.jpg"
-                  alt="Professional legal team"
-                  width={900}
-                  height={675}
-                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-gold/40"
-                  priority
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent" />
-              </div>
-            </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-10">
-          <FaArrowDown className="h-6 w-6 text-gold" />
+        <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 animate-bounce">
+          <FaArrowDown className="h-5 w-5 text-[#e5a57f]" />
         </div>
       </section>
 
       {/* Spanish Banner */}
-      <section className="bg-gold py-3">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <p className="text-black font-bold text-lg md:text-xl">
+      <section className="border-b border-[#c9bcae] bg-[#e8e1d7] py-4">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="flex items-center justify-center gap-3 text-center">
+            <span className="h-px w-10 bg-[#b56b45]" />
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#19324a] md:text-base">
               ¡Se Habla Español!
             </p>
+            <span className="h-px w-10 bg-[#b56b45]" />
           </div>
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section id="about" className="relative py-16 md:py-20 bg-gray-900 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <div className="absolute -top-10 -left-10 w-80 h-80 bg-gold rounded-full blur-3xl opacity-20" />
-          <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-gold rounded-full blur-3xl opacity-20" />
+      {/* Consultation Preparation Section */}
+      <section className="relative overflow-hidden border-b border-[#c9bcae] bg-[#f4f1eb] py-20 md:py-28">
+        <div className="absolute right-0 top-0 h-full w-1/3 bg-[#e8e1d7]/60 [clip-path:polygon(28%_0,100%_0,100%_100%,0_100%)]" />
+        <div className="container relative z-10 mx-auto px-6 md:px-10">
+          <div className="mb-12 max-w-2xl scroll-animate translate-y-[40px] opacity-0">
+            <p className="eyebrow">{t.prep.eyebrow}</p>
+            <h2 className="mt-4 text-3xl font-normal text-[#19324a] md:text-5xl">{t.prep.title}</h2>
+            <p className="mt-5 text-base leading-7 text-[#52616b] md:text-lg">{t.prep.subtitle}</p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {t.prep.items.map((item) => (
+              <div key={item.number} className="scroll-animate translate-y-[40px] border-t-2 border-[#b56b45] pt-5 opacity-0">
+                <span className="font-mono text-sm font-bold tracking-[0.2em] text-[#b56b45]">{item.number}</span>
+                <h3 className="mt-5 text-xl font-bold text-[#19324a]">{item.title}</h3>
+                <p className="mt-3 leading-7 text-[#52616b]">{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 border-l-2 border-[#b56b45] pl-4 text-sm font-semibold text-[#19324a]">{t.prep.note}</p>
         </div>
+      </section>
 
-        <div className="container mx-auto px-4 relative z-10">
+      {/* About Us Section */}
+      <section id="about" className="relative overflow-hidden bg-[#f4f1eb] py-20 md:py-28">
+        {/* Background Elements */}
+        <div className="container relative z-10 mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="space-y-8 scroll-animate transform translate-x-[-100px] opacity-0 transition-all duration-1000">
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold">
+                <p className="eyebrow">The firm</p>
+                <h2 className="mt-4 text-3xl font-normal text-[#19324a] md:text-5xl">
                   {t.about.title}
                 </h2>
-                <div className="space-y-4 text-gray-300 text-base md:text-lg leading-relaxed">
+                <div className="space-y-4 text-base leading-relaxed text-[#52616b] md:text-lg">
                   <p>{t.about.description1}</p>
                   <p>{t.about.description2}</p>
                 </div>
@@ -358,56 +385,56 @@ export default function Home() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-6">
-                <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-gold/20">
-                  <div className="text-2xl md:text-3xl font-bold text-gold mb-2">500+</div>
-                  <div className="text-sm text-gray-400">{t.about.casesWon}</div>
+                  <div className="border-t border-[#c9bcae] py-5">
+                  <div className="mb-2 text-2xl font-bold text-[#b56b45] md:text-3xl">500+</div>
+                  <div className="text-sm text-[#52616b]">{t.about.casesWon}</div>
                 </div>
-                <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-gold/20">
-                  <div className="text-2xl md:text-3xl font-bold text-gold mb-2">25+</div>
-                  <div className="text-sm text-gray-400">{t.about.yearsExp}</div>
+                <div className="border-t border-[#c9bcae] py-5">
+                  <div className="mb-2 text-2xl font-bold text-[#b56b45] md:text-3xl">25+</div>
+                  <div className="text-sm text-[#52616b]">{t.about.yearsExp}</div>
                 </div>
-                <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-gold/20">
-                  <div className="text-2xl md:text-3xl font-bold text-gold mb-2">100%</div>
-                  <div className="text-sm text-gray-400">{t.about.satisfaction}</div>
+                <div className="border-t border-[#c9bcae] py-5">
+                  <div className="mb-2 text-2xl font-bold text-[#b56b45] md:text-3xl">100%</div>
+                  <div className="text-sm text-[#52616b]">{t.about.satisfaction}</div>
                 </div>
               </div>
 
               {/* Key Features */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.5 9.7-7 10-3.5-.3-7-5-7-10V6l7-4z"/></svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-[#b56b45] text-[#b56b45]">
+                    <span>01</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Trusted Defense</h3>
-                    <p className="text-sm text-gray-400">Protecting your rights</p>
+                    <h3 className="font-semibold text-[#19324a]">Trusted Defense</h3>
+                    <p className="text-sm text-[#52616b]">Protecting your rights</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 4.8L20 8l-4 3.9.9 5.6L12 15.8 7.1 17.5 8 11.9 4 8l5.6-1.2L12 2z"/></svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-[#b56b45] text-[#b56b45]">
+                    <span>02</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Award Winning</h3>
-                    <p className="text-sm text-gray-400">Recognized excellence</p>
+                    <h3 className="font-semibold text-[#19324a]">Award Winning</h3>
+                    <p className="text-sm text-[#52616b]">Recognized excellence</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11a4 4 0 11-8 0 4 4 0 018 0zm-9 7a6 6 0 0110 0v2H7v-2z"/></svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-[#b56b45] text-[#b56b45]">
+                    <span>03</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Client Focused</h3>
-                    <p className="text-sm text-gray-400">Your success is our priority</p>
+                    <h3 className="font-semibold text-[#19324a]">Client Focused</h3>
+                    <p className="text-sm text-[#52616b]">Your success is our priority</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <svg className="h-6 w-6 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7 7h10v2H7V7zm-2 4h14v2H5v-2zm3 4h8v2H8v-2z"/></svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-[#b56b45] text-[#b56b45]">
+                    <span>04</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Fair Justice</h3>
-                    <p className="text-sm text-gray-400">Fighting for what's right</p>
+                    <h3 className="font-semibold text-[#19324a]">Fair Justice</h3>
+                    <p className="text-sm text-[#52616b]">Fighting for what's right</p>
                   </div>
                 </div>
               </div>
@@ -418,12 +445,12 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-gold/30 to-transparent rounded-2xl transform -rotate-3" />
                 <div className="absolute inset-0 bg-gold/10 rounded-2xl transform rotate-1" />
-                <Image
+                  <Image
                   src="/images/aboutus.jpg"
                   alt="Senior partner in law office"
                   width={600}
                   height={800}
-                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-gold/30"
+                    className="content-image relative rounded-2xl shadow-2xl w-full h-auto object-cover border-2 border-gold/30"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
               </div>
@@ -433,71 +460,72 @@ export default function Home() {
       </section>
 
       {/* Practice Areas Section */}
-      <section className="py-16 md:py-20 bg-black">
-        <div className="container mx-auto px-4">
+      <section className="bg-[#19324a] py-20 text-[#f4f1eb] md:py-28">
+        <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold mb-4 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+            <p className="eyebrow text-[#e5a57f]">Where we help</p>
+            <h2 className="mb-4 mt-4 text-3xl font-normal text-[#f4f1eb] md:text-5xl scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               {t.practice.title}
             </h2>
-            <p className="text-base md:text-lg text-white max-w-2xl mx-auto scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+            <p className="mx-auto max-w-2xl text-base text-[#b8c5cc] md:text-lg scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               {t.practice.subtitle}
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-              <div className="overflow-hidden rounded-lg mb-4">
+            <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 border-t border-[#d8e0e4]/30 p-6 md:p-8 transition-colors duration-300 hover:bg-[#244762] group">
+              <div className="mb-4 overflow-hidden">
                 <Image 
                   src="/images/criminal.jpg" 
                   alt="Criminal Defense" 
                   width={400}
                   height={300}
-                  className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
+                  className="mb-4 h-40 w-full object-cover grayscale transition-transform duration-300 group-hover:scale-105 md:h-48"
                 />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gold mb-3">{t.practice.criminal.title}</h3>
-              <p className="text-gray-300 mb-4 text-sm md:text-base">
+              <h3 className="mb-3 text-lg font-bold text-[#e5a57f] md:text-xl">{t.practice.criminal.title}</h3>
+              <p className="mb-4 text-sm text-[#b8c5cc] md:text-base">
                 {t.practice.criminal.description}
               </p>
-              <a href="/practice-areas#criminal" className="text-gold font-semibold hover:underline text-sm md:text-base">
+              <a href="/practice-areas#criminal" className="text-sm font-semibold text-[#f4f1eb] hover:text-[#e5a57f] md:text-base">
                 {t.practice.criminal.learnMore}
               </a>
             </div>
             
-            <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-              <div className="overflow-hidden rounded-lg mb-4">
+            <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 border-t border-[#d8e0e4]/30 p-6 md:p-8 transition-colors duration-300 hover:bg-[#244762] group">
+              <div className="mb-4 overflow-hidden">
                 <Image 
                   src="/images/immigration.jpg" 
                   alt="Immigration Law" 
                   width={400}
                   height={300}
-                  className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
+                  className="mb-4 h-40 w-full object-cover grayscale transition-transform duration-300 group-hover:scale-105 md:h-48"
                 />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gold mb-3">{t.practice.immigration.title}</h3>
-              <p className="text-gray-300 mb-4 text-sm md:text-base">
+              <h3 className="mb-3 text-lg font-bold text-[#e5a57f] md:text-xl">{t.practice.immigration.title}</h3>
+              <p className="mb-4 text-sm text-[#b8c5cc] md:text-base">
                 {t.practice.immigration.description}
               </p>
-              <a href="/practice-areas#immigration" className="text-gold font-semibold hover:underline text-sm md:text-base">
+              <a href="/practice-areas#immigration" className="text-sm font-semibold text-[#f4f1eb] hover:text-[#e5a57f] md:text-base">
                 {t.practice.immigration.learnMore}
               </a>
             </div>
             
-            <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-1">
-              <div className="overflow-hidden rounded-lg mb-4">
+            <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 border-t border-[#d8e0e4]/30 p-6 md:p-8 transition-colors duration-300 hover:bg-[#244762] group md:col-span-2 lg:col-span-1">
+              <div className="mb-4 overflow-hidden">
                 <Image 
                   src="/images/carinjury.jpg" 
                   alt="Personal Injury" 
                   width={400}
                   height={300}
-                  className="w-full h-40 md:h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300"
+                  className="mb-4 h-40 w-full object-cover grayscale transition-transform duration-300 group-hover:scale-105 md:h-48"
                 />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gold mb-3">{t.practice.personalInjury.title}</h3>
-              <p className="text-gray-300 mb-4 text-sm md:text-base">
+              <h3 className="mb-3 text-lg font-bold text-[#e5a57f] md:text-xl">{t.practice.personalInjury.title}</h3>
+              <p className="mb-4 text-sm text-[#b8c5cc] md:text-base">
                 {t.practice.personalInjury.description}
               </p>
-              <a href="/practice-areas#personal-injury" className="text-gold font-semibold hover:underline text-sm md:text-base">
+              <a href="/practice-areas#personal-injury" className="text-sm font-semibold text-[#f4f1eb] hover:text-[#e5a57f] md:text-base">
                 {t.practice.personalInjury.learnMore}
               </a>
             </div>
@@ -506,13 +534,14 @@ export default function Home() {
       </section>
 
       {/* Client Testimonials Section */}
-      <section className="py-16 md:py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+      <section className="bg-[#e8e1d7] py-20 md:py-28">
+        <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold mb-4 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+            <p className="eyebrow">Client perspective</p>
+            <h2 className="mb-4 mt-4 text-3xl font-normal text-[#19324a] md:text-5xl scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               {t.testimonials.title}
             </h2>
-            <p className="text-base md:text-lg text-white max-w-2xl mx-auto scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+            <p className="mx-auto max-w-2xl text-base text-[#52616b] md:text-lg scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               {t.testimonials.subtitle}
             </p>
           </div>
@@ -528,18 +557,18 @@ export default function Home() {
               >
                 {loopedTestimonials.map((testimonial, index) => (
                   <div key={`${testimonial.id}-${index}`} className="w-full md:w-1/3 flex-shrink-0 px-4">
-                    <div className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg h-full">
+                    <div className="h-full border-t-2 border-[#b56b45] bg-[#f4f1eb] p-6 shadow-sm md:p-8">
                       <div className="flex items-center mb-4">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <FaStar key={i} className="text-gold text-lg" />
+                          <FaStar key={i} className="text-[#b56b45] text-lg" />
                         ))}
                       </div>
-                      <p className="text-gray-300 mb-6 text-sm md:text-base italic">
+                      <p className="mb-6 text-sm italic leading-7 text-[#52616b] md:text-base">
                         "{testimonial.text}"
                       </p>
                       <div className="border-t border-gray-700 pt-4">
-                        <p className="text-gold font-bold text-sm md:text-base">{testimonial.name}</p>
-                        <p className="text-gray-400 text-xs md:text-sm">{testimonial.case}</p>
+                        <p className="text-sm font-bold text-[#19324a] md:text-base">{testimonial.name}</p>
+                        <p className="text-xs text-[#52616b] md:text-sm">{testimonial.case}</p>
                       </div>
                     </div>
                   </div>
@@ -551,14 +580,14 @@ export default function Home() {
             <div className="flex justify-center items-center space-x-4">
               <button
                 onClick={prevTestimonial}
-                className="bg-gold text-black p-3 rounded-full shadow-lg hover:bg-gold/90 transition-all duration-300"
+                className="border border-[#19324a] p-3 text-[#19324a] transition-all duration-300 hover:bg-[#19324a] hover:text-white"
               >
                 <FaChevronLeft size={20} />
               </button>
               
               <button
                 onClick={nextTestimonial}
-                className="bg-gold text-black p-3 rounded-full shadow-lg hover:bg-gold/90 transition-all duration-300"
+                className="border border-[#19324a] p-3 text-[#19324a] transition-all duration-300 hover:bg-[#19324a] hover:text-white"
               >
                 <FaChevronRight size={20} />
               </button>
@@ -571,7 +600,7 @@ export default function Home() {
                   key={index}
                   onClick={() => setCurrentTestimonialIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonialIndex ? 'bg-gold' : 'bg-gray-600'
+                    index === currentTestimonialIndex ? 'bg-[#b56b45]' : 'bg-[#b8aa9b]'
                   }`}
                 />
               ))}
@@ -581,13 +610,14 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-20 bg-black">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="bg-[#f4f1eb] py-20 md:py-28">
+        <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold mb-4 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+            <p className="eyebrow">Start a conversation</p>
+            <h2 className="mb-4 mt-4 text-3xl font-normal text-[#19324a] md:text-5xl scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               {t.contact.title}
             </h2>
-            <p className="text-base md:text-lg text-white max-w-2xl mx-auto scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+            <p className="mx-auto max-w-2xl text-base text-[#52616b] md:text-lg scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               {t.contact.subtitle}
             </p>
           </div>
@@ -597,37 +627,37 @@ export default function Home() {
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
               <div className="space-y-6 md:space-y-8">
                 <div className="flex items-center space-x-4">
-                  <FaPhone className="text-gold text-xl md:text-2xl flex-shrink-0" />
+                  <FaPhone className="flex-shrink-0 text-xl text-[#b56b45] md:text-2xl" />
                   <div>
-                    <h3 className="font-bold text-gold text-base md:text-lg">{t.contact.phone}</h3>
-                    <p className="text-gray-300 text-base md:text-lg">(555) 123-4567</p>
+                    <h3 className="text-base font-bold text-[#19324a] md:text-lg">{t.contact.phone}</h3>
+                    <p className="text-base text-[#52616b] md:text-lg">(555) 123-4567</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <FaEnvelope className="text-gold text-xl md:text-2xl flex-shrink-0" />
+                  <FaEnvelope className="flex-shrink-0 text-xl text-[#b56b45] md:text-2xl" />
                   <div>
-                    <h3 className="font-bold text-gold text-base md:text-lg">{t.contact.email}</h3>
-                    <p className="text-gray-300 text-base md:text-lg">glennquezada14@gmail.com</p>
+                    <h3 className="text-base font-bold text-[#19324a] md:text-lg">{t.contact.email}</h3>
+                    <p className="text-base text-[#52616b] md:text-lg">glennquezada14@gmail.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <FaMapMarkerAlt className="text-gold text-xl md:text-2xl flex-shrink-0" />
+                  <FaMapMarkerAlt className="flex-shrink-0 text-xl text-[#b56b45] md:text-2xl" />
                   <div>
-                    <h3 className="font-bold text-gold text-base md:text-lg">{t.contact.address}</h3>
-                    <p className="text-gray-300 text-base md:text-lg">{t.contact.address1}</p>
-                    <p className="text-gray-300 text-base md:text-lg">{t.contact.address2}</p>
+                    <h3 className="text-base font-bold text-[#19324a] md:text-lg">{t.contact.address}</h3>
+                    <p className="text-base text-[#52616b] md:text-lg">McAllen, Texas</p>
+                    <p className="text-base text-[#52616b] md:text-lg">{t.contact.address2}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <FaClock className="text-gold text-xl md:text-2xl flex-shrink-0" />
+                  <FaClock className="flex-shrink-0 text-xl text-[#b56b45] md:text-2xl" />
                   <div>
-                    <h3 className="font-bold text-gold text-base md:text-lg">{t.contact.hours}</h3>
-                    <p className="text-gray-300 text-sm md:text-base">{t.contact.hours1}</p>
-                    <p className="text-gray-300 text-sm md:text-base">{t.contact.hours2}</p>
-                    <p className="text-gray-300 text-sm md:text-base">{t.contact.hours3}</p>
+                    <h3 className="text-base font-bold text-[#19324a] md:text-lg">{t.contact.hours}</h3>
+                    <p className="text-sm text-[#52616b] md:text-base">{t.contact.hours1}</p>
+                    <p className="text-sm text-[#52616b] md:text-base">{t.contact.hours2}</p>
+                    <p className="text-sm text-[#52616b] md:text-base">{t.contact.hours3}</p>
                   </div>
                 </div>
               </div>
@@ -635,9 +665,9 @@ export default function Home() {
 
             {/* Map */}
             <div className="scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
-              <div className="bg-gray-800 h-64 md:h-96 rounded-lg shadow-xl overflow-hidden">
+              <div className="h-64 overflow-hidden border border-[#c9bcae] bg-[#e8e1d7] shadow-sm md:h-96">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
+                  src="https://www.google.com/maps?q=McAllen%2C%20Texas&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -652,14 +682,15 @@ export default function Home() {
       </section>
 
       {/* Consultation Form Section */}
-      <section id="consultation" className="py-16 md:py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+      <section id="consultation" className="bg-[#19324a] py-20 md:py-28">
+        <div className="container mx-auto px-6 md:px-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-gold mb-4 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+              <p className="eyebrow text-[#e5a57f]">Confidential and straightforward</p>
+              <h2 className="mb-4 mt-4 text-3xl font-normal text-[#f4f1eb] md:text-5xl scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
                 {t.consultation.title}
               </h2>
-              <p className="text-base md:text-lg text-white scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+              <p className="text-base text-[#b8c5cc] md:text-lg scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
                 {t.consultation.subtitle}
               </p>
             </div>
@@ -672,19 +703,20 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-black text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000 text-gold">
+      <section className="bg-[#b56b45] py-20 text-white md:py-28">
+        <div className="container mx-auto px-6 text-center md:px-10">
+          <p className="eyebrow text-white/80">The next step is simple</p>
+          <h2 className="mb-6 mt-4 text-3xl font-normal text-white md:text-5xl scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
             {t.cta.title}
           </h2>
-          <p className="text-lg md:text-xl mb-6 md:mb-8 text-gray-300 scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
+          <p className="mb-6 text-lg text-white/85 md:mb-8 md:text-xl scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
             {t.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-animate transform translate-y-[50px] opacity-0 transition-all duration-1000">
-            <a href="/#contact" className="bg-gold text-black py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold/90 transition-all duration-300">
+            <a href="/#contact" className="bg-[#19324a] px-6 py-3 text-base font-bold text-white transition-all duration-300 hover:bg-[#244762] md:px-8 md:py-4 md:text-lg">
               {t.cta.contactBtn}
             </a>
-            <a href="tel:+15551234567" className="border-2 border-gold text-gold py-3 md:py-4 px-6 md:px-8 rounded-lg font-bold text-base md:text-lg hover:bg-gold hover:text-black transition-all duration-300">
+            <a href="tel:+15551234567" className="border border-white px-6 py-3 text-base font-bold text-white transition-all duration-300 hover:bg-white hover:text-[#19324a] md:px-8 md:py-4 md:text-lg">
               {t.cta.callBtn}
             </a>
           </div>
